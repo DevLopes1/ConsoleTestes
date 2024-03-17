@@ -22,7 +22,7 @@ public class MenuPrograma()
             "versão: " + MenuPrograma.version + "\n" +
             "==========ConsoleTestes========== \n" +
             " Programas/Desafios disponíveis \n" +
-            "Programa - ApenasTeste[1]  Programa - Indefinido[2] \n=>"
+            "Programa - ApenasTeste[1]  Programa - Calc Operadores Básicos[2] \n=>"
             );
         string ret = Console.ReadLine();
 
@@ -34,6 +34,7 @@ public class MenuPrograma()
                 ApenasTeste.teste(msg);
                 break;
             case "2":
+                CalcOperadoresBasicos.menuPrograma();
                 break;
             default:
                 Console.WriteLine("Nenhum programa existe com esta definição!");
