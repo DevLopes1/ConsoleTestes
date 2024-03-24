@@ -15,7 +15,7 @@ Main();
 public class MenuPrograma()
 {
    
-    static string version = "20240323.Build.4"; // 0000 - ano 00 - mes 00 - dia .Build. - info da build 0 - numero da builda da versao
+    static string version = "20240324.Build.5"; // 0000 - ano 00 - mes 00 - dia .Build. - info da build 0 - numero da builda da versao
     public static void menu()
     {
         //Console.WriteLine("Hello World! existem estes programas \n Programa[1]  Programa[2]");

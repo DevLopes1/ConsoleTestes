@@ -25,32 +25,47 @@ namespace ConsoleTestes.Programas
 
         public void consultarNewsAPI(string query)
         {
+            var now = DateTime.Now;
+            var lastMonth = DateTime.Now.Month - 1;
+            var firstDay = DateTime.MinValue.Day;
+            var yearNow = DateTime.Now.Year;
+            var dayLast = DateTime.Now.Day -1;
+
+            // new DateTime(yearNow, lastMonth, firstDay), 
+            //new DateTime(yearNow, now.Month, dayLast)
             var articlesResponse = newsApiClient.GetEverything(new EverythingRequest
             {
                 Q = query,
+                PageSize = 12,
                 SortBy = SortBys.Popularity,
-                Language = Languages.EN,
-                From = new DateTime(2018, 1, 25)
+                Language = Languages.PT,
+                From = new DateTime(yearNow, now.Month, dayLast),
+                To = DateTime.Now,
             });
+
+
 
 
             if (articlesResponse.Status == Statuses.Ok)
             {
                 // total results found
+               
                 Console.WriteLine("Resultados das Notícias de hoje: " + articlesResponse.TotalResults);
                 // here's the first 20
                 foreach (var article in articlesResponse.Articles)
                 {
+
+                    Console.WriteLine("==========" + article.Title + "==========");
                     // title
-                    Console.WriteLine(article.Title);
                     // author
                     Console.WriteLine(article.Author);
                     // description
-                    Console.WriteLine(article.Description);
+                    Console.WriteLine(article.Description.Trim());
                     // url
                     Console.WriteLine(article.Url);
                     // published at
-                    Console.WriteLine(article.PublishedAt);
+                    Console.WriteLine("==========" + article.PublishedAt + "==========");
+                    Console.WriteLine("\n");
                 }
             }
             Console.WriteLine("Acabou...");
