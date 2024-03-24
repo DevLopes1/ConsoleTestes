@@ -14,7 +14,8 @@ Main();
 
 public class MenuPrograma()
 {
-    static string version = "20240316.Build.1"; // 0000 - ano 00 - mes 00 - dia .Build. - info da build 0 - numero da builda da versao
+   
+    static string version = "20240323.Build.4"; // 0000 - ano 00 - mes 00 - dia .Build. - info da build 0 - numero da builda da versao
     public static void menu()
     {
         //Console.WriteLine("Hello World! existem estes programas \n Programa[1]  Programa[2]");
@@ -22,7 +23,7 @@ public class MenuPrograma()
             "versão: " + MenuPrograma.version + "\n" +
             "==========ConsoleTestes========== \n" +
             " Programas/Desafios disponíveis \n" +
-            "Programa - ApenasTeste[1] | Programa - Calc Operadores Básicos[2] | Programa - Consultar Cep [3] \n=>"
+            "Programa - ApenasTeste[1] | Programa - Calc Operadores Básicos[2] | Programa - Consultar Cep [3] \n Programa - NewsAPI Notícias [4] \n=>"
             );
         string ret = Console.ReadLine();
 
@@ -38,6 +39,9 @@ public class MenuPrograma()
                 break;
             case "3":
                 ConsultaCep.menuPrograma();
+                break;
+            case "4":
+                NoticiasNewsAPI.menuPrograma();
                 break;
             default:
                 Console.WriteLine("Nenhum programa existe com esta definição!");
